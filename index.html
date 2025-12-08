@@ -1,31 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Happy Birthday Roshini ❤️</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div id="lock-screen">
-    <h2>Enter Password to Unlock ❤️</h2>
+<!-- PASSWORD SCREEN -->
+<div id="lock-screen" class="fade-in">
+    <h2 class="unlock-title">🔒 Enter Your Secret Key ❤️</h2>
     <input type="password" id="password-input" placeholder="Enter Password" />
     <button id="unlock-btn">Unlock</button>
-    <div id="error-msg">Incorrect password. Try again.</div>
+    <p id="error-msg">Incorrect password</p>
 </div>
 
-<audio id="bg-music" src="music.wav" loop></audio>
-
+<!-- MAIN BIRTHDAY PAGE -->
 <div id="main-content">
-    <div class="title">✨ Happy Birthday My Love ROSHINI ❤️ ✨</div>
 
-    <div class="image-box img1"><img src="img1.jpg"></div>
-    <div class="image-box img2"><img src="img2.jpg"></div>
-    <div class="image-box img3"><img src="img3.jpg"></div>
+    <!-- floating hearts -->
+    <div id="heart-container"></div>
 
-    <div class="message">Roshini, you are the best part of my life. Every moment with you feels like a blessing ❤️</div>
+    <h1 class="title">✨ Happy Birthday My Love, Roshini ❤️ ✨</h1>
+
+    <!-- Image gallery -->
+    <div class="gallery">
+        <img src="img1.jpg" class="slide fade">
+        <img src="img2.jpg" class="slide fade">
+        <img src="img3.jpg" class="slide fade">
+    </div>
+
+    <p class="quote">
+        “You are not just my wife…  
+        You are the most beautiful chapter of my life.  
+        Happy Birthday, Roshini ❤️”
+    </p>
+
+    <audio id="bg-music" src="music.wav" loop></audio>
 </div>
 
 <script src="script.js"></script>
