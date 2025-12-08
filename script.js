@@ -1,17 +1,39 @@
-
-const unlockBtn = document.getElementById("unlock-btn");
-const lockScreen = document.getElementById("lock-screen");
-const mainContent = document.getElementById("main-content");
-const passwordInput = document.getElementById("password-input");
-const errorMsg = document.getElementById("error-msg");
-const music = document.getElementById("bg-music");
-
-unlockBtn.addEventListener("click", () => {
-    if (passwordInput.value === "1234") {
-        lockScreen.style.display = "none";
-        mainContent.style.display = "block";
-        music.play();
+// PASSWORD
+document.getElementById("unlock-btn").onclick = function () {
+    let input = document.getElementById("password-input").value;
+    if (input === "1234") {
+        document.getElementById("lock-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+        document.getElementById("bg-music").play();
     } else {
-        errorMsg.style.display = "block";
+        document.getElementById("error-msg").style.display = "block";
     }
-});
+};
+
+// HEARTS
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.bottom = "0px";
+    heart.style.fontSize = (20 + Math.random()*30) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 300);
+
+// SLIDESHOW
+let slideIndex = 0;
+slideShow();
+
+function slideShow() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(slideShow, 3000);
+}
