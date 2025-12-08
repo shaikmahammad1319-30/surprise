@@ -1,62 +1,119 @@
-
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0d0d0d;
+    background: #0a0a0a;
+    font-family: Poppins, sans-serif;
     overflow: hidden;
 }
 
+/* PASSWORD PAGE */
 #lock-screen {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100vh;
     background: linear-gradient(135deg, #1a1a1a, #000);
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-    color: #fff; z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.unlock-title {
+    font-size: 28px;
+    animation: glow 2s infinite alternate;
 }
 
 #password-input {
-    padding: 12px 18px;
-    border-radius: 10px; border: none;
-    font-size: 18px; margin-top: 20px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
 }
 
 #unlock-btn {
-    margin-top: 15px; padding: 12px 28px;
-    border-radius: 10px; border: none;
-    background: #ff007f; color: #fff;
-    font-size: 18px; cursor: pointer;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ff007f;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: .3s;
 }
 
+#unlock-btn:hover {
+    background: #ff4da6;
+}
+
+#error-msg {
+    margin-top: 10px;
+    color: #ff4d4d;
+    display: none;
+}
+
+/* MAIN PAGE */
 #main-content {
     display: none;
-    width: 100%; height: 100vh;
-    position: relative;
+    text-align: center;
+    color: white;
 }
 
 .title {
-    position: absolute; top: 5%;
-    width: 100%; text-align: center;
-    color: #fff; font-size: 38px; font-weight: 700;
+    margin-top: 5%;
+    font-size: 36px;
+    font-weight: 700;
+    animation: glow 2s infinite alternate;
 }
 
-.image-box {
-    width: 320px; height: 420px;
-    position: absolute; border-radius: 20px;
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff007f; }
+    to { text-shadow: 0 0 25px #ff4da6; }
+}
+
+/* SLIDESHOW */
+.gallery {
+    width: 90%;
+    max-width: 420px;
+    margin: 40px auto;
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 0 25px rgba(255,0,128,0.6);
+    box-shadow: 0 0 25px rgba(255,0,128,0.7);
 }
 
-.img1 { left: 5%; top: 25%; }
-.img2 { left: 38%; top: 18%; }
-.img3 { right: 5%; top: 25%; }
+.slide {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: none;
+    animation: fade 1.5s;
+}
 
-.image-box img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes fade {
+    from { opacity: .4; }
+    to { opacity: 1; }
+}
 
-.message {
-    position: absolute; bottom: 5%;
-    width: 100%; text-align: center;
-    color: #ffe6f2; font-size: 28px;
+.quote {
+    font-size: 24px;
+    margin-top: 20px;
+    animation: fade 3s infinite alternate;
+}
+
+/* HEARTS */
+.heart {
+    position: fixed;
+    color: #ff4da6;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
 }
