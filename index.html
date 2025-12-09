@@ -9,14 +9,11 @@
 <body>
 
 <!-- PASSWORD SCREEN -->
-<div id="password-screen" class="password-screen">
-    <div class="password-box">
-        <div class="lock-icon">🔒</div>
-        <h2>Enter Secret Code</h2>
-        <input type="password" id="password-input" placeholder="••••••">
-        <button onclick="checkPassword()">Unlock ❤️</button>
-        <p id="error-msg"></p>
-    </div>
+<div id="lock-screen" class="fade-in">
+    <h2 class="unlock-title">🔒 Enter Your Secret Key ❤️</h2>
+    <input type="password" id="password-input" placeholder="Enter Password" />
+    <button id="unlock-btn">Unlock</button>
+    <p id="error-msg">Incorrect password</p>
 </div>
 
 
