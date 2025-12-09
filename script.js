@@ -1,3 +1,29 @@
+const correctPassword = "1319";  // <-- Change here
+
+function checkPassword() {
+    const input = document.getElementById("password-input").value;
+    const error = document.getElementById("error-msg");
+    const box = document.querySelector(".password-box");
+
+    if (input === correctPassword) {
+        error.style.color = "#00ff99";
+        error.innerText = "Unlocked 💖";
+
+        setTimeout(() => {
+            document.getElementById("password-screen").style.display = "none";
+        }, 600);
+
+    } else {
+        error.style.color = "#ff3333";
+        error.innerText = "Wrong password ❌";
+        box.classList.add("shake");
+
+        setTimeout(() => {
+            box.classList.remove("shake");
+        }, 500);
+    }
+}
+
 // PASSWORD
 document.getElementById("unlock-btn").onclick = function () {
     let input = document.getElementById("password-input").value;
