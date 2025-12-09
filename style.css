@@ -167,11 +167,19 @@ body {
     object-fit: cover;
 }
 @media (max-width: 600px) {
-    .main-img {
+    .slide {
         width: 100%;
         height: auto;
         object-fit: cover;
         margin: 0 auto;
     }
+}
+/* Fix image fit for desktop + mobile */
+.slide {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
 }
 
