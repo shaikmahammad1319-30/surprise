@@ -137,3 +137,26 @@ body {
         height: auto;
     }
 }
+/* Mobile Responsive Fix */
+@media (max-width: 600px) {
+
+    .gallery img {
+        width: 100%;        /* full width image */
+        height: auto;       /* keep proper ratio */
+        object-fit: cover;  /* clean fit */
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* If slider images */
+    .slider img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
