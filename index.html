@@ -9,12 +9,16 @@
 <body>
 
 <!-- PASSWORD SCREEN -->
-<div id="lock-screen">
-    <h2 class="unlock-title">🔒 Enter Your Love Key ❤️</h2>
-    <input type="password" id="password-input" placeholder="Enter Password" />
-    <button id="unlock-btn">Unlock</button>
-    <p id="error-msg">Incorrect password</p>
+<div id="password-screen" class="password-screen">
+    <div class="password-box">
+        <div class="lock-icon">🔒</div>
+        <h2>Enter Secret Code</h2>
+        <input type="password" id="password-input" placeholder="••••••">
+        <button onclick="checkPassword()">Unlock ❤️</button>
+        <p id="error-msg"></p>
+    </div>
 </div>
+
 
 <!-- MAIN BIRTHDAY PAGE -->
 <div id="main-content">
